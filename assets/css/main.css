@@ -1119,7 +1119,6 @@ section {
   text-decoration: none;
   white-space: nowrap;
   transition: all 0.2s ease;
-  position: relative; /* Added for absolute positioning of chevron */
 }
 
 .dropdown-menu li a:hover,
@@ -1151,11 +1150,10 @@ section {
   visibility: visible;
 }
 
-/* Chevron Icons - Fixed Positioning */
+/* Chevron Icons */
 .dropdown > a > .fa-chevron-down,
 .dropdown-submenu > a > .fa-chevron-right {
-  position: absolute;
-  right: 15px; /* Positions chevron at the right edge */
+  margin-left: 20px; /* Increased space between text and icon */
   font-size: 12px;
   transition: transform 0.3s ease;
 }
@@ -1203,13 +1201,12 @@ section {
   
   .dropdown > a > .fa-chevron-down,
   .dropdown-submenu > a > .fa-chevron-right {
-    position: relative; /* Reset for mobile */
-    right: auto;
-    margin-left: 10px;
     transform: none !important;
+    margin-left: auto; /* Push icon to right on mobile */
+    padding-left: 15px; /* Add space on mobile */
   }
   
   .dropdown-menu li a {
-    padding-right: 30px; /* Add space for chevron on mobile */
+    display: flex; /* Maintain flex layout on mobile */
   }
 }
