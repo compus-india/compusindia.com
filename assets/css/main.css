@@ -1110,7 +1110,9 @@ section {
 }
 
 .dropdown-menu li a {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 20px;
   color: #333333;
   font-size: 14px;
@@ -1151,7 +1153,7 @@ section {
 /* Chevron Icons */
 .dropdown > a > .fa-chevron-down,
 .dropdown-submenu > a > .fa-chevron-right {
-  margin-left: 8px;
+  margin-left: 20px; /* Increased space between text and icon */
   font-size: 12px;
   transition: transform 0.3s ease;
 }
@@ -1200,5 +1202,11 @@ section {
   .dropdown > a > .fa-chevron-down,
   .dropdown-submenu > a > .fa-chevron-right {
     transform: none !important;
+    margin-left: auto; /* Push icon to right on mobile */
+    padding-left: 15px; /* Add space on mobile */
+  }
+  
+  .dropdown-menu li a {
+    display: flex; /* Maintain flex layout on mobile */
   }
 }
