@@ -1,1 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GST SERVICES | Compus India</title>
+  <style>
+    :root {
+      --primary: #0055ff;
+      --primary-dark: #003bb3;
+      --bg: #f0f4f8;
+      --text: #1c1c1c;
+      --white: #fff;
+    }
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #003366, #0055ff);
+      color: var(--white);
+      text-align: center;
+      padding: 4rem 1rem 3rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      background: var(--white);
+      padding: 3rem 2rem;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    section:hover {
+      transform: scale(1.01);
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 2rem;
+    }
+
+    .service-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .service-button {
+      background: var(--primary);
+      color: var(--white);
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 85, 255, 0.3);
+    }
+
+    .service-button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 85, 255, 0.4);
+    }
+
+    footer {
+      background: #003366;
+      color: var(--white);
+      text-align: center;
+      padding: 1.2rem 1rem;
+      margin-top: 4rem;
+      font-size: 0.95rem;
+      box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      .service-button {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>GST SERVICES</h1>
+    <p>Comprehensive GST services from registration to return filing, ensuring your business stays compliant and stress-free under the latest tax regulations.</p>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Explore Our Services</h2>
+      <div class="service-grid">
+        <a href="/services/S6/gst-return-fillings.html" class="service-button">GST Return Filings </a>
+        <a href="/services/S6/gst-registration.html" class="service-button">GST Registration  </a>
+        <a href="/services/S6/gst-annual-return-and-audit-support.html" class="service-button">GST Annual Return & Audit Support      </a>
+        <a href="/services/S6/gst-notice-support.html" class="service-button">GST Notice Support   </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 COMPUS INDIA. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
