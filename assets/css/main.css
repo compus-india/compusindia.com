@@ -1210,3 +1210,6 @@ section {
     display: flex; /* Maintain flex layout on mobile */
   }
 }
+.section .content-section h2 {
+    color: #007bff; /* Bootstrap primary blue */
+}
