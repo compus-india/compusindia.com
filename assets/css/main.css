@@ -1212,4 +1212,5 @@ section {
 }
 .content-section h2 {
     color: #007bff !important;
+    text-transform: uppercase;
 }
