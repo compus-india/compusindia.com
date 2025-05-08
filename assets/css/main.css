@@ -78,7 +78,6 @@ a {
     color: inherit;
     transition: var(--transition);
 }
-
 img {
     max-width: 100%;
     height: auto;
@@ -95,6 +94,8 @@ ul {
     margin: 0 auto;
     padding: 0 1.5rem;
 }
+
+  
 
 section {
     padding: var(--section-padding);
@@ -1210,3 +1211,9 @@ section {
     display: flex; /* Maintain flex layout on mobile */
   }
 }
+.content-section h2 {
+    color: #007bff !important;
+    text-transform: uppercase;
+}
+
+  
