@@ -912,6 +912,10 @@ section {
 }
 
 @media (max-width: 768px) {
+    body {
+        padding-top: 140px; /* Fix: Push content below taller mobile header */
+    }
+
     .mobile-menu-btn {
         display: flex;
     }
