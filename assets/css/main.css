@@ -1214,3 +1214,8 @@ section {
     color: #007bff !important;
     text-transform: uppercase;
 }
+.content-section section {
+    padding-top: 40px; /* or even 0 if unnecessary */
+  }
+  
+  
