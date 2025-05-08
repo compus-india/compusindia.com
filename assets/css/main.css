@@ -50,8 +50,9 @@ body {
   background-color: var(--white);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  padding-top: var(--header-height); 
+  padding-top: calc(var(--header-height) + 20px); /* ADDED: Avoid content hiding behind fixed header */
 }
+
 
 
 h1, h2, h3, h4, h5, h6 {
