@@ -1215,7 +1215,7 @@ section {
     text-transform: uppercase;
 }
 .content-section section {
-    padding-top: 40px; /* or even 0 if unnecessary */
+    padding-top: 40px !important; /* or even 0 if unnecessary */
   }
   
   
