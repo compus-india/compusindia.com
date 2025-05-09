@@ -429,7 +429,7 @@ section {
 
 .hero-btns {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
     flex-wrap: wrap;
 }
 
