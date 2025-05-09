@@ -1217,7 +1217,10 @@ section {
     color: #007bff !important;
     text-transform: uppercase;
 }
-
-
-
+/* Add this to your CSS */
+.container, .section-header, .hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 15px;
+}
   
