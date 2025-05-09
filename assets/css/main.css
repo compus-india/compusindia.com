@@ -485,6 +485,11 @@ section {
         overflow: hidden;
     }
 }
+@media (max-width: 768px) {
+    .services-section::before {
+        display: none; /* Hides the floating circle on small screens */
+    }
+}
 .services-section::before {
     content: '';
     position: absolute;
