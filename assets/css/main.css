@@ -480,11 +480,7 @@ section {
     overflow: hidden;
 }
 
-@media (min-width: 769px) {
-    .services-section {
-        overflow: hidden;
-    }
-}
+
 @media (max-width: 768px) {
     .services-section::before {
         display: none; /* Hides the floating circle on small screens */
