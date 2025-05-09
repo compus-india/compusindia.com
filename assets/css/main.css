@@ -486,6 +486,21 @@ section {
         display: none; /* Hides the floating circle on small screens */
     }
 }
+
+@media (max-width: 480px) {
+  .services-section {
+    /* Force full width + padding */
+    width: 100vw;
+    padding: 2rem 1rem !important;
+    margin-left: -1rem; /* Counteracts any unwanted padding */
+  }
+
+  .service-card {
+    /* Ensure text containers don’t overflow */
+    min-width: 0; /* Fixes flexbox overflow */
+    word-break: break-word;
+  }
+}
 .services-section::before {
     content: '';
     position: absolute;
