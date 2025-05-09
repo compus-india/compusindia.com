@@ -480,6 +480,11 @@ section {
     overflow: hidden;
 }
 
+@media (min-width: 769px) {
+    .services-section {
+        overflow: hidden;
+    }
+}
 .services-section::before {
     content: '';
     position: absolute;
@@ -1218,9 +1223,4 @@ section {
     text-transform: uppercase;
 }
 /* Add this to your CSS */
-.container, .section-header, .hero-content {
-    width: 100%;
-    max-width: 100%;
-    padding: 0 15px;
-}
-  
+
