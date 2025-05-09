@@ -1030,6 +1030,23 @@ section {
     }
 }
 
+.btn-top-row {
+        display: flex;
+        gap: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+@media (max-width: 768px) {
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .btn-top-row {
+            justify-content: center;
+        }
+    }
+
 @media (max-width: 576px) {
     .container {
         padding: 0 1.25rem;
