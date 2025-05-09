@@ -429,7 +429,7 @@ section {
 
 .hero-btns {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     flex-wrap: wrap;
 }
 
@@ -1015,10 +1015,7 @@ section {
     }
     
     .hero-btns {
-        justify-content: center !important;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
+        justify-content: center;
     }
     
     .hero-scroll-down {
@@ -1029,8 +1026,6 @@ section {
         --section-padding: 5rem 0;
     }
 }
-
-
 
 @media (max-width: 576px) {
     .container {
@@ -1244,4 +1239,3 @@ section {
     text-transform: uppercase;
 }
 /* Add this to your CSS */
-
