@@ -520,7 +520,7 @@ button.loading:after {
             });
 
             // Initialize EmailJS
-            emailjs.init('VUNIoPQPteRVoWMmT');
+            emailjs.init('PUBLIC_KEY');
             
             // Contact Form Submission
             const contactForm = document.getElementById('contact-form');
@@ -539,8 +539,8 @@ button.loading:after {
                     
                     // Send form data
                     emailjs.sendForm(
-                        'service_iotp3gt', // Your EmailJS service ID
-                        'template_pbsdq7y', // Your EmailJS template ID
+                        'bbbbbb', // Your EmailJS service ID
+                        'bbbbb', // Your EmailJS template ID
                         this
                     )
                     .then(() => {
