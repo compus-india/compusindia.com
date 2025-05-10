@@ -128,6 +128,78 @@
   background: #2563eb;
 }
 
+/* Success Message */
+.success-message {
+  display: none;
+  text-align: center;
+  padding: 50px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.success-message i {
+  font-size: 60px;
+  color: #10b981;
+  margin-bottom: 20px;
+}
+
+.success-message h2 {
+  font-size: 1.8rem;
+  color: #0f172a;
+  margin-bottom: 15px;
+}
+
+.success-message p {
+  margin-bottom: 25px;
+  color: #475569;
+}
+
+/* Form Error */
+.form-error {
+  padding: 15px;
+  background: #fee2e2;
+  color: #b91c1c;
+  border-radius: 8px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Loading State */
+button.loading {
+  position: relative;
+  pointer-events: none;
+}
+
+button.loading:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid transparent;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
         /* ONLY MAP */
 .map-container.large-map {
   width: 100%;
@@ -312,12 +384,12 @@
   <div class="contact-grid">
     <div class="contact-form">
       <h3>📬 Quick Contact Form</h3>
-      <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <input type="text" placeholder="Phone Number (optional)">
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
+      <form id="contact-form">
+        <input type="text" name="user_name" placeholder="Your Name" required>
+        <input type="email" name="user_email" placeholder="Your Email" required>
+        <input type="text" name="user_phone" placeholder="Phone Number (optional)">
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" id="contact-submit-btn">Send Message</button>
       </form>
     </div>
 
@@ -332,6 +404,15 @@
       Mukkam Road, Kunnamangalam - 673571,<br>
       Kozhikode, Kerala, India</p>
     </div>
+  </div>
+  
+  <!-- Success Message -->
+  <div id="contact-success-message" class="success-message" style="display: none;">
+    <i class="fas fa-check-circle"></i>
+    <h2>Message Sent Successfully</h2>
+    <p>Thank you for contacting Compus India. We have received your message and will get back to you shortly.</p>
+    <p>For immediate assistance, please call our support team.</p>
+    <a href="index.html" class="btn btn-primary">Return to Home</a>
   </div>
     </section>
 
@@ -425,7 +506,89 @@
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Add EmailJS Script -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script src="assets/js/main.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+
+            // Initialize EmailJS
+            emailjs.init('VUNIoPQPteRVoWMmT');
+            
+            // Contact Form Submission
+            const contactForm = document.getElementById('contact-form');
+            const contactSubmitBtn = document.getElementById('contact-submit-btn');
+            const contactSuccessMessage = document.getElementById('contact-success-message');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    
+                    // Show loading state
+                    const originalBtnText = contactSubmitBtn.textContent;
+                    contactSubmitBtn.disabled = true;
+                    contactSubmitBtn.classList.add('loading');
+                    contactSubmitBtn.textContent = 'Sending...';
+                    
+                    // Send form data
+                    emailjs.sendForm(
+                        'service_iotp3gt', // Your EmailJS service ID
+                        'template_pbsdq7y', // Your EmailJS template ID
+                        this
+                    )
+                    .then(() => {
+                        // Show success message
+                        contactForm.style.display = 'none';
+                        contactSuccessMessage.style.display = 'block';
+                        
+                        // Reset form
+                        contactForm.reset();
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                        const errorMsg = document.createElement('div');
+                        errorMsg.className = 'form-error';
+                        errorMsg.innerHTML = `
+                            <i class="fas fa-exclamation-circle"></i>
+                            <p>Failed to send message. Please try again or contact us directly.</p>
+                        `;
+                        contactForm.parentNode.insertBefore(errorMsg, contactForm.nextSibling);
+                        
+                        setTimeout(() => {
+                            errorMsg.remove();
+                        }, 5000);
+                    })
+                    .finally(() => {
+                        // Reset button state
+                        contactSubmitBtn.disabled = false;
+                        contactSubmitBtn.classList.remove('loading');
+                        contactSubmitBtn.textContent = originalBtnText;
+                    });
+                });
+            }
+
+            // Back to top button
+            const backToTop = document.getElementById('backToTop');
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('active');
+                } else {
+                    backToTop.classList.remove('active');
+                }
+            });
+
+            backToTop.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 </html>
-
