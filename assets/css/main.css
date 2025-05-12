@@ -1266,4 +1266,24 @@ section {
     color: #007bff !important;
     text-transform: uppercase;
 }
-/* Add this to your CSS */
+.nav-social {
+    margin-right: 1.5rem;
+}
+
+.nav-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    color: white;
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.nav-social a:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 4px 12px rgba(193, 53, 132, 0.3);
+}
